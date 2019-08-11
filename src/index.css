@@ -7,6 +7,9 @@
 .more-operate-section {
   width: 600px;
 }
+.more-operate-circle {
+  width: 300px;
+}
 .more-operate-section .item-title {
   color: #fff;
   float: left;
