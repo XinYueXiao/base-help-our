@@ -1,0 +1,20 @@
+{
+  "name": "base-help-our",
+  "version": "1.0.0",
+  "description": "## 一些基础插件 ### 吸顶效果 ### 换行显示更多 ### 高亮",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/XinYueXiao/base-help-our.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/XinYueXiao/base-help-our/issues"
+  },
+  "homepage": "https://github.com/XinYueXiao/base-help-our#readme"
+}
