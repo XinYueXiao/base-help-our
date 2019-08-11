@@ -1,3 +1,41 @@
 .demo article {
   text-align: center;
 }
+.demo section {
+  margin: 10px auto;
+}
+.more-operate-section {
+  width: 600px;
+}
+.more-operate-section .item-title {
+  color: #fff;
+  float: left;
+  width: 40px;
+  margin: 0px 10px 10px;
+  text-align: center;
+  background-color: #4158d0;
+  background-image: linear-gradient(
+    43deg,
+    #4158d0 0%,
+    #c850c0 46%,
+    #ffcc70 100%
+  );
+  background-image: -webkit-linear-gradient(
+    43deg,
+    #4158d0 0%,
+    #c850c0 46%,
+    #ffcc70 100%
+  );
+  background-image: -moz-linear-gradient(
+    43deg,
+    #4158d0 0%,
+    #c850c0 46%,
+    #ffcc70 100%
+  );
+  background-image: -o-linear-gradient(
+    43deg,
+    #4158d0 0%,
+    #c850c0 46%,
+    #ffcc70 100%
+  );
+}

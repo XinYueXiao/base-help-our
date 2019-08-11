@@ -2,6 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import TreeTransfer from "./TreeTransfer";
 import dataJson from "./dataJson";
+import MoreOperate from "./MoreOperate";
 import "antd/dist/antd.css";
 import "./index.css";
 class App extends React.Component {
@@ -18,6 +19,23 @@ class App extends React.Component {
             onClickCancel={() => console.log("隐藏")}
             onOkClick={list => console.log("保存的筛选项", list)}
           />
+        </section>
+        <section className="more-operate-section">
+          <article>
+            <h1>隐藏更多，点击显示 </h1>
+            <em>核心：宽度的监控</em>
+          </article>
+          <MoreOperate lineHight={30} textMore="更多">
+            {[
+              ...dataJson.hotCity,
+              ...dataJson.hotCity,
+              ...dataJson.hotCity
+            ].map((one, index) => (
+              <div key={index} class="item-title">
+                {one.title}
+              </div>
+            ))}
+          </MoreOperate>
         </section>
       </div>
     );
