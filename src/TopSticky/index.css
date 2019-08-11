@@ -1,0 +1,9 @@
+.top-sticky-box {
+  position: relative;
+}
+.top-sticky {
+  position: sticky;
+  z-index: 9;
+  top: -20px;
+  margin-top: -180px;
+}

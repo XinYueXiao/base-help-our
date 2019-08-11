@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import "./index.css";
-import { render } from "react-dom";
 class CircleLinear extends Component {
   render() {
     const { lineWidth = "3px", color = [], width, height } = this.props;
@@ -16,9 +15,7 @@ class CircleLinear extends Component {
           padding: lineWidth
         }}
       >
-        <div className="radius-box" id="jsRadiusBoxId">
-          {this.props.children}
-        </div>
+        <div className="radius-box">{this.props.children}</div>
       </div>
     );
   }

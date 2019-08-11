@@ -46,7 +46,7 @@ class App extends React.Component {
 
         <section className="more-operate-circle">
           <article>
-            <h1>环形渐变 </h1>
+            <h1>线性环形渐变 </h1>
             <em>核心：偷换概念</em>
           </article>
           <CircleLinear
