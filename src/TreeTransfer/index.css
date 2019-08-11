@@ -1,0 +1,62 @@
+.tree-transfer {
+  background: #fff;
+  width: 500px;
+  margin: 0px auto;
+  line-height: normal;
+  overflow: hidden;
+  border-radius: 4px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+.hot-city {
+  margin-top: 10px;
+}
+.hot-city-name {
+  margin: 4px 8px;
+  background: #fff;
+  cursor: pointer;
+}
+.tree-transfer-left {
+  padding: 0px 10px;
+  border-right: 1px solid #cacaca;
+  width: 266px;
+  float: left;
+}
+.left-tree {
+  height: 230px;
+  overflow-y: auto;
+  border-bottom: 1px solid #cacaca;
+}
+.left-footer {
+  float: right;
+  margin: 10px;
+}
+.left-footer > span {
+  cursor: pointer;
+}
+.left-footer > a {
+  padding-left: 10px;
+}
+
+.tree-transfer-right {
+  margin-left: 266px;
+  padding: 10px;
+}
+.right-title {
+  border-bottom: 1px solid #cacaca;
+  padding-bottom: 10px;
+}
+.right-title > a {
+  float: right;
+}
+.right-content {
+  max-height: 310px;
+  overflow-y: auto;
+}
+.tag-item {
+  width: 100%;
+  margin: 5px auto 0px;
+}
+.anticon-close {
+  float: right;
+  margin-top: 4px;
+}
