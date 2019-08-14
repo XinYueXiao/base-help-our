@@ -1,0 +1,33 @@
+:root {
+  --blueColor: #1890ff;
+}
+.form-margin-left {
+}
+.form-margin-left .ant-col-4 {
+  max-width: 100px;
+}
+.add-a-style {
+  border: 2px dotted var(--blueColor);
+  text-align: center;
+  width: 100px;
+  margin-top: 8px;
+}
+.item-form {
+  margin-left: -50px;
+  padding-top: 10px;
+  margin-top: 10px;
+  border: 1px dotted #ccc;
+}
+.close-div {
+  text-align: right;
+  margin-top: -12px;
+  margin-right: 2px;
+  color: transparent;
+}
+.item-form:hover {
+  border: 1px dotted var(--blueColor);
+  box-shadow: 1px 1px 2px var(--blueColor);
+}
+.item-form:hover .close-div {
+  color: var(--blueColor);
+}

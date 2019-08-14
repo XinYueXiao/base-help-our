@@ -5,6 +5,7 @@ import dataJson from "./dataJson";
 import MoreOperate from "./MoreOperate";
 import CInputNumber from "./CInputNumber";
 import CircleLinear from "./CircleLinear";
+import Resume from "./Resume";
 
 import { InputNumber } from "antd";
 
@@ -14,6 +15,7 @@ class App extends React.Component {
   render() {
     return (
       <div className="demo">
+        <Resume />
         <section className="more-operate-section">
           <article>
             <h1>隐藏更多，点击显示 </h1>

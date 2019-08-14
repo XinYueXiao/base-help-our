@@ -43,3 +43,10 @@
     #ffcc70 100%
   );
 }
+
+.box-center {
+  margin: 0px auto;
+}
+.text-center {
+  text-align: center;
+}
