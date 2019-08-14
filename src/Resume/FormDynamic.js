@@ -77,7 +77,11 @@ class FormDynamic extends Component {
         </div>
         {list.map((one, index) => {
           return (
-            <div className="item-form" onMouseLeave={this.handleBlur}>
+            <div
+              className="item-form"
+              onMouseLeave={this.handleBlur}
+              key={one.key}
+            >
               {/* list至少有一个才能删除 */}
               {list.length > 1 ? (
                 <div className="close-div">

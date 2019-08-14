@@ -6,13 +6,17 @@
   text-align: center;
 }
 .demo section {
-  margin: 10px auto;
+  margin: 20px auto;
+  overflow: hidden;
+  border: 0.5px dotted var(--blueColor);
+  width: 600px;
+  padding: 10px;
 }
 .more-operate-section {
   width: 600px;
 }
 .more-operate-circle {
-  width: 300px;
+  width: 220px !important ;
   height: 300px;
 }
 .more-operate-section .item-title {

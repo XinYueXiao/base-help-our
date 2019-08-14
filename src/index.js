@@ -15,7 +15,9 @@ class App extends React.Component {
   render() {
     return (
       <div className="demo">
-        <Resume />
+        <section>
+          <Resume />
+        </section>
         <section className="more-operate-section">
           <article>
             <h1>隐藏更多，点击显示 </h1>
@@ -27,7 +29,7 @@ class App extends React.Component {
               ...dataJson.hotCity,
               ...dataJson.hotCity
             ].map((one, index) => (
-              <div key={index} class="item-title">
+              <div key={index} className="item-title">
                 {one.title}
               </div>
             ))}
@@ -54,13 +56,13 @@ class App extends React.Component {
           <CircleLinear
             color={["#5effff", "#309bff"]}
             lineWidth="4px"
-            width="260px"
-            height="260px"
+            width="200px"
+            height="200px"
           >
             <img
               src="http://s6.sinaimg.cn/mw690/0071fbiQzy7jQiKE0Pb45&690"
-              width="240"
-              height="240"
+              width="180"
+              height="180"
               alt="头像"
             />
           </CircleLinear>
