@@ -1,5 +1,5 @@
-import React, { Component, Fragment } from "react";
-import { Form, Input, DatePicker, Row, Col, Button, Icon } from "antd";
+import React, { Component } from "react";
+import { Form, Input, DatePicker, Icon } from "antd";
 import "./FormDynamic.css";
 const FormItem = Form.Item;
 class FormDynamic extends Component {
@@ -10,9 +10,9 @@ class FormDynamic extends Component {
       list: [
         {
           key: 0,
-          name: "xxx",
+          name: undefined,
           time: [],
-          description: ""
+          description: undefined
         }
       ]
     };
@@ -39,9 +39,9 @@ class FormDynamic extends Component {
     let { list = [] } = this.state;
     list.push({
       key: list.length,
-      name: "xxx",
+      name: undefined,
       time: [],
-      description: ""
+      description: undefined
     });
     this.setState({
       list: list
@@ -49,18 +49,16 @@ class FormDynamic extends Component {
   };
   //修改数据
   changeList = (value, key, index) => {
-    console.log(key, ":", value, index);
     const { list } = this.state;
     list[index][key] = value;
     this.setState({
       list: list
     });
-    this.props.form.validateFieldsAndScroll((err, values) => {
-      if (!err) {
-        const { onChange } = this.props;
-        onChange && onChange(list);
-      }
-    });
+    const { onChange } = this.props;
+    onChange && onChange(list);
+  };
+  handleBlur = () => {
+    this.props.form.validateFieldsAndScroll();
   };
   render() {
     const { list } = this.state;
@@ -73,11 +71,13 @@ class FormDynamic extends Component {
     return (
       <Form {...formItemLayout} className="form-margin-left">
         <div className="add-a-style">
-          <a onClick={this.addList}>添加</a>
+          <a onClick={this.addList} href="#">
+            添加
+          </a>
         </div>
         {list.map((one, index) => {
           return (
-            <div className="item-form">
+            <div className="item-form" onMouseLeave={this.handleBlur}>
               {/* list至少有一个才能删除 */}
               {list.length > 1 ? (
                 <div className="close-div">
@@ -98,6 +98,7 @@ class FormDynamic extends Component {
                   ]
                 })(
                   <Input
+                    placeholder={`请输入${baseConfig.name}`}
                     onChange={e =>
                       this.changeList(e.target.value, `name`, index)
                     }
@@ -116,6 +117,7 @@ class FormDynamic extends Component {
                   ]
                 })(
                   <DatePicker.RangePicker
+                    placeholder={[`开始时间`, "结束时间"]}
                     onChange={data => this.changeList(data, "time", index)}
                   />
                 )}

@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from "react";
+import React, { Component } from "react";
 import { Form, Input, Button } from "antd";
 import FormDynamic from "./FormDynamic";
 import resume from "./resume";
@@ -8,7 +8,7 @@ class FormPage extends Component {
     e.preventDefault();
     this.props.form.validateFieldsAndScroll((err, values) => {
       if (!err) {
-        console.log("Received values of form: ", values);
+        console.log("Received values of form: ", JSON.stringify(values));
         const { setInfo, setStep } = this.props;
         setInfo(values);
         setStep(2);
@@ -17,7 +17,7 @@ class FormPage extends Component {
   };
   render() {
     const { info = {} } = this.props;
-    const { companyList = [], projectList = [], baseinfo = {} } = info;
+    const { companyList = [], projectList = [], baseInfo = {} } = info;
     const { getFieldDecorator } = this.props.form;
     const formItemLayout = {
       labelCol: { span: 4 },
@@ -25,11 +25,12 @@ class FormPage extends Component {
     };
     return (
       <Form {...formItemLayout}>
-        {resume.formJson.baseInfo.map(one => {
+        <div className="title-2">填写信息</div>
+        {resume.formJson.baseInfoConfig.map(one => {
           return (
             <FormItem label={one.label} key={one.key}>
-              {getFieldDecorator(`baseinfo.${one.key}`, {
-                initialValue: baseinfo[one.key],
+              {getFieldDecorator(`baseInfo.${one.key}`, {
+                initialValue: baseInfo[one.key],
                 rules: [
                   {
                     required: one.required !== 1,
@@ -49,7 +50,12 @@ class FormPage extends Component {
                 message: `请填写工作经验`
               }
             ]
-          })(<FormDynamic baseConfig={resume.formJson.companyInfo} />)}
+          })(
+            <FormDynamic
+              ref={form => (this.companyList = form)}
+              baseConfig={resume.formJson.companyInfo}
+            />
+          )}
         </FormItem>
         <FormItem label="项目经验">
           {getFieldDecorator("projectList", {
@@ -60,7 +66,12 @@ class FormPage extends Component {
                 message: `请填写项目经验`
               }
             ]
-          })(<FormDynamic baseConfig={resume.formJson.projectInfo} />)}
+          })(
+            <FormDynamic
+              ref={form => (this.projectList = form)}
+              baseConfig={resume.formJson.projectInfo}
+            />
+          )}
         </FormItem>
         <div className="text-center">
           <Button

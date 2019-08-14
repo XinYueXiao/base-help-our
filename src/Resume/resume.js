@@ -1,5 +1,5 @@
 const formJson = {
-  baseInfo: [
+  baseInfoConfig: [
     {
       label: "姓名",
       key: "name"

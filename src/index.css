@@ -1,3 +1,7 @@
+:root {
+  --blueColor: #1890ff;
+  --colorGray: #333;
+}
 .demo article {
   text-align: center;
 }
@@ -49,4 +53,33 @@
 }
 .text-center {
   text-align: center;
+}
+.display-flex {
+  display: flex;
+}
+.justify-around {
+  display: flex;
+  justify-content: space-around;
+}
+.justify-between {
+  display: flex;
+  justify-content: space-between;
+}
+
+.border-ccc {
+  border: 1px dotted #ccc;
+  border-radius: 10px;
+}
+.grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.title-2 {
+  text-align: center;
+  width: 100px;
+  margin: 10px auto;
+  background: var(--blueColor);
+  color: #fff;
+  border-radius: 10px;
+  padding: 5px 10px;
 }

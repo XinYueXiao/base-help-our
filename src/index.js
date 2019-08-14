@@ -61,6 +61,7 @@ class App extends React.Component {
               src="http://s6.sinaimg.cn/mw690/0071fbiQzy7jQiKE0Pb45&690"
               width="240"
               height="240"
+              alt="头像"
             />
           </CircleLinear>
         </section>
