@@ -6,72 +6,60 @@ import MoreOperate from "./MoreOperate";
 import CInputNumber from "./CInputNumber";
 import CircleLinear from "./CircleLinear";
 import Resume from "./Resume";
-
-import { InputNumber } from "antd";
-
+import { InputNumber, Collapse } from "antd";
 import "antd/dist/antd.css";
 import "./index.css";
+const { Panel } = Collapse;
 class App extends React.Component {
   render() {
     return (
       <div className="demo">
-        <section>
-          <Resume />
-        </section>
-        <section className="more-operate-section">
-          <article>
-            <h1>隐藏更多，点击显示 </h1>
-            <em>核心：宽度的监控</em>
-          </article>
-          <MoreOperate lineHight={30} textMore="更多">
-            {[
-              ...dataJson.hotCity,
-              ...dataJson.hotCity,
-              ...dataJson.hotCity
-            ].map((one, index) => (
-              <div key={index} className="item-title">
-                {one.title}
-              </div>
-            ))}
-          </MoreOperate>
-        </section>
-
-        <section>
-          <article>
-            <h1>树形穿梭框 </h1>
-            <em>核心：数据的流转，数据选中/取消同步</em>
-          </article>
-          <TreeTransfer
-            options={dataJson.hotCity}
-            onClickCancel={() => console.log("隐藏")}
-            onOkClick={list => console.log("保存的筛选项", list)}
-          />
-        </section>
-
-        <section className="more-operate-circle">
-          <article>
-            <h1>线性环形渐变 </h1>
-            <em>核心：偷换概念</em>
-          </article>
-          <CircleLinear
-            color={["#5effff", "#309bff"]}
-            lineWidth="4px"
-            width="200px"
-            height="200px"
-          >
-            <img
-              src="http://s6.sinaimg.cn/mw690/0071fbiQzy7jQiKE0Pb45&690"
-              width="180"
-              height="180"
-              alt="头像"
+        <Collapse defaultActiveKey={["1", "2"]}>
+          <Panel header="隐藏更多，点击显示(核心：宽度的监控) " key="1">
+            <section className="more-operate-section">
+              <MoreOperate lineHight={30} textMore="更多">
+                {[
+                  ...dataJson.hotCity,
+                  ...dataJson.hotCity,
+                  ...dataJson.hotCity
+                ].map((one, index) => (
+                  <div key={index} className="item-title">
+                    {one.title}
+                  </div>
+                ))}
+              </MoreOperate>
+            </section>
+          </Panel>
+          <Panel header="动态操作Form生成简历(核心：Form)" key="2">
+            <section>
+              <Resume />
+            </section>
+          </Panel>
+          <Panel header="树形穿梭框(核心：数据选中/取消同步)" key="3">
+            <TreeTransfer
+              options={dataJson.hotCity}
+              onClickCancel={() => console.log("隐藏")}
+              onOkClick={list => console.log("保存的筛选项", list)}
             />
-          </CircleLinear>
-        </section>
-
-        <section>
-          <article>
-            <h1>输入必须为数字 </h1>
-            <em>核心：正则表达式过滤可用字符</em>
+          </Panel>
+          <Panel header="线性环形渐变(核心：偷换概念)" key="4">
+            <section className="more-operate-circle">
+              <CircleLinear
+                color={["#5effff", "#309bff"]}
+                lineWidth="4px"
+                width="200px"
+                height="200px"
+              >
+                <img
+                  src="http://s6.sinaimg.cn/mw690/0071fbiQzy7jQiKE0Pb45&690"
+                  width="180"
+                  height="180"
+                  alt="头像"
+                />
+              </CircleLinear>
+            </section>
+          </Panel>
+          <Panel header="输入必须为数字(核心：正则表达式过滤可用字符)" key="5">
             <div>
               俺的： <CInputNumber max={100} />
             </div>
@@ -79,8 +67,8 @@ class App extends React.Component {
             <div>
               官方： <InputNumber max={100} />
             </div>
-          </article>
-        </section>
+          </Panel>
+        </Collapse>
       </div>
     );
   }

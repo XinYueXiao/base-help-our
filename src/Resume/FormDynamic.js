@@ -29,7 +29,7 @@ class FormDynamic extends Component {
   //删除
   deleteList = index => {
     let { list = [] } = this.state;
-    list = list.filter(one => one.key === index);
+    list = list.filter(one => one.key !== index);
     this.setState({
       list: list
     });
@@ -70,10 +70,8 @@ class FormDynamic extends Component {
     };
     return (
       <Form {...formItemLayout} className="form-margin-left">
-        <div className="add-a-style">
-          <a onClick={this.addList} href="#">
-            添加
-          </a>
+        <div className="add-a-style" onClick={this.addList}>
+          添加
         </div>
         {list.map((one, index) => {
           return (

@@ -139,11 +139,10 @@ class TreeTransfer extends Component {
   };
   //删除已选择方法
   onCloseKeys = id => () => {
-    const { checkedKeys } = this.state;
-    console.log(checkedKeys, id);
-
+    const { selectedKeys } = this.state;
     this.setState({
-      checkedKeys: checkedKeys.filter(one => one != id)
+      checkedKeys: selectedKeys.filter(one => one != id),
+      selectedKeys: selectedKeys.filter(one => one != id)
     });
   };
   //热门城市点击事件

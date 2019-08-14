@@ -4,10 +4,16 @@
   max-width: 100px;
 }
 .add-a-style {
-  border: 2px dotted var(--blueColor);
+  border: 1px dotted var(--blueColor);
   text-align: center;
   width: 100px;
   margin-top: 8px;
+  color: var(--blueColor);
+}
+.add-a-style:hover {
+  background: var(--blueColor);
+  cursor: pointer;
+  color: #fff;
 }
 .item-form {
   margin-left: -50px;
