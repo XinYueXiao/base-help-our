@@ -68,7 +68,7 @@ class FormDynamic extends Component {
     const { getFieldDecorator } = this.props.form;
     const formItemLayout = {
       labelCol: { span: 4 },
-      wrapperCol: { span: 20 }
+      wrapperCol: { span: 18 }
     };
     return (
       <Form {...formItemLayout} className="form-margin-left">
