@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import { InputNumber } from "antd";
-
+import { InputNumber, Popover } from "antd";
+import "./index.css";
 export default class CInputNumber extends Component {
   //数据校验
   formatter = value => {
@@ -33,13 +33,25 @@ export default class CInputNumber extends Component {
   }
 
   render() {
-    return (
+    const { falseErrorMessage, max } = this.props;
+    const InputNumberCom = (
       <InputNumber
         {...this.props}
         formatter={this.formatter}
         onChange={this.onChange}
         value={this.state.value}
       />
+    );
+    return falseErrorMessage && this.state.value > max ? (
+      <Popover
+        content={falseErrorMessage}
+        overlayClassName="popover-red-color"
+        trigger="focus"
+      >
+        {InputNumberCom}
+      </Popover>
+    ) : (
+      InputNumberCom
     );
   }
 }

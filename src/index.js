@@ -14,7 +14,16 @@ class App extends React.Component {
   render() {
     return (
       <div className="demo">
-        <Collapse defaultActiveKey={["1", "2"]}>
+        <Collapse defaultActiveKey={["1", "5"]}>
+          <Panel header="输入必须为数字(核心：正则表达式过滤可用字符)" key="5">
+            <div>
+              俺的： <CInputNumber max={100} falseErrorMessage="不超过100" />
+            </div>
+            <br />
+            <div>
+              官方： <InputNumber max={100} />
+            </div>
+          </Panel>
           <Panel header="隐藏更多，点击显示(核心：宽度的监控) " key="1">
             <section className="more-operate-section">
               <MoreOperate lineHight={30} textMore="更多">
@@ -58,15 +67,6 @@ class App extends React.Component {
                 />
               </CircleLinear>
             </section>
-          </Panel>
-          <Panel header="输入必须为数字(核心：正则表达式过滤可用字符)" key="5">
-            <div>
-              俺的： <CInputNumber max={100} />
-            </div>
-            <br />
-            <div>
-              官方： <InputNumber max={100} />
-            </div>
           </Panel>
         </Collapse>
       </div>
